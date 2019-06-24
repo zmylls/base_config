@@ -1,0 +1,26 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.android.library">
+
+
+    <!--网络权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--读写sdk权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!--适配9.0 http-->
+    <application
+            android:networkSecurityConfig="@xml/network_security_config">
+
+        <!--适配-->
+        <uses-library
+                android:name="org.apache.http.legacy"
+                android:required="false"/>
+
+        <!-- 全面屏配置 -->
+        <meta-data
+                android:name="android.max_aspect"
+                android:value="2.1" />
+    </application>
+
+</manifest>
